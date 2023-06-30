@@ -1,0 +1,39 @@
+﻿@model List<InventarioBodegaModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Inventario</h1>
+    <a asp-action="Unidades" asp-controller="Home" class="btn btn-primary btn-sm">Ir al Unidades por Ubicacion</a>
+</div>
+
+<div class="card">
+    @foreach (var item in Model)
+    {
+        <div class="card-header">
+            <div class="mb-2">
+                <label class="form-label">Consultar Inventario</label>
+            </div>
+        </div>
+        <div class="card-body">
+            <hr />
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Disponibilidad Neta</th>
+                        <th>Total Inventario Comprometido</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>@item.disponibilidadNeta</td>
+                        <td>@item.totalInventarioComprometido</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

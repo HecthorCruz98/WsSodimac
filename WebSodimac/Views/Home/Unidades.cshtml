@@ -1,0 +1,39 @@
+﻿@model List<UnidadesPorUbicacionModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="text-center">
+    <h1 class="display-4">Unidades por Ubicacion</h1>
+    <a asp-action="Inventario" asp-controller="Home" class="btn btn-primary btn-sm">Ir al Inventario</a>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <div class="mb-2">
+            <label class="form-label">Consultar Unidades por Ubicacion</label>
+        </div>
+    </div>
+    <div class="card-body">
+        <hr />
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Cantidad Reserva</th>
+                    <th>Cantidad Activo</th>
+                    <th>Cantidad No Almacenada</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.cantidadReserva</td>
+                        <td>@item.cantidadActivo</td>
+                        <td>@item.cantidadNoAlmacenada</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
